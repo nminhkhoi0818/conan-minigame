@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animation.css">
+    <title>Memory Game</title>
+</head>
+<body>
+    <div class="intro">
+    <h2>Chào mừng mọi người đến với Conan Minigame</h2>
+    
+    <h2>Nhiệm vụ của bạn ở minigame này là đoán ra một nhân vật trong Conan</h2>
+
+    <h2>Mình sẽ cho bạn các gợi ý được ẩn trong các trò chơi để giúp bạn đoán ra nhân vật đó</h2>
+
+    <h2>Chúc bạn may mắn!</h2>
+
+    <button class="btn intro-btn">Start</button>
+    </div>
+    <div class="memory-game hide">
+    <h3 style="font-size: 30px; margin: 30px; color: white">Score: <span id="result"></span></h3>
+
+    <div class="grid">
+        
+    </div>
+    
+
+    </div>
+
+
+    <div class="tic-tac-toe hide">
+        <div class="win">
+            <p class="winner hide">The Winner is</p>
+            <p class="x-text sign hide">X</p>
+            <p class="o-text sign hide">O</p>
+            <p class="winner draw hide">It's a Draw</p>
+            <p class="clue-2 hide sign">Manh mối thứ 2 đó là đây là một nhân vật có tóc ngắn. Còn bây giờ hãy đến với thử thách cuối cùng</p>
+        </div>
+    
+        <div class="card">
+            <div class="item board">
+                <button class="field" id="1"><p></p></button>
+                <button class="field" id="2"><p></p></button>
+                <button class="field no-r" id="3"><p></p></button>
+                <button class="field" id="4"><p></p></button>
+                <button class="field" id="5"><p></p></button>
+                <button class="field no-r" id="6"><p></p></button>
+                <button class="field no-b" id="7"><p></p></button>
+                <button class="field no-b" id="8"><p></p></button>
+                <button class="field no-b no-r" id="9"><p></p></button>
+            </div>
+            <div class="item rst">
+                <button class="btn restart">Restart</button>
+            </div>
+        </div>
+    </div>
+
+    <!--Quiz game-->
+    <section class="quiz-game hide">
+    <div class="home-box custom-box" style="text-align: left;">
+        <h3>Instruction: Trả lời các câu hỏi về Conan</h3>
+        <p>Total number of questions: <span class="total-question"></span></p>
+        <button type="button" class='btn' onclick="startQuiz()">Start Quiz</button>
+    </div>
+    <div class="quiz-box custom-box hide">
+        <div class="question-number">
+            
+        </div>
+        <div class="question-text">
+            
+        </div>
+        <div class="option-container">		
+        </div>
+        <div class="next-question-btn">
+            <button type="button" class="btn" onclick="next()">Next</button>
+        </div>
+        <div class="answers-indicator">
+ 
+        </div>
+    </div>
+ 
+    <div class="result-box custom-box hide">
+     <h1>Quiz Result</h1>
+     <table>
+         <tr>
+             <td>Total Questions</td>
+             <td><span class="total-question"></span></td>
+         </tr>
+         <tr>
+             <td>Attempt</td>
+             <td><span class="total-attempt"></span></td>
+         </tr>
+         <tr>
+             <td>Correct</td>
+             <td><span class="total-correct"></span></td>
+         </tr>
+         <tr>
+             <td>Wrong</td>
+             <td><span class="total-wrong"></span></td>
+         </tr>
+         <tr>
+             <td>Percentage</td>
+             <td><span class="percentage"></span></td>
+         </tr>
+         <tr>
+             <td>Manh mối thứ 3</td>
+             <td><span class="total-score"></span></td>
+         </tr>
+     </table>
+     <button type="button" class="btn" onclick="tryAgainQuiz()">Try Again</button>
+     <button type="button" class="btn" onclick="answerLastQuestion()">Answer the last question</button>
+    </div>
+    
+    </section>
+
+    <section class="question-full hide">
+
+        <div class="win">
+            <h2 style="font-size:40px ;">Nhân vật được nhắc đến qua các manh mối là </h2> 
+        </div>
+
+        <div class="question-btn">
+        <button class="btn answer-1"><p>Ai Haibara</p></button>
+        <button class="btn answer-2"><p>Ran Mouri</p></button>
+        <button class="btn answer-3"><p>Ayumi Yoshida</p></button>
+        </div>
+
+    </section>
+
+    <div class="congrats hide">
+        <h2>Xin chúc mừng bạn đã có câu trả lời rất chính xác. Bạn chắc hẳn là một người thích xem Conan. </h2>
+        <h2>Sắp tới Conan Movie 25 sẽ được công chiếu trên các rạp tại Việt Nam, hãy đón xem nha!!! Cảm ơn bạn đã tham gia minigame cùng mình</h2>
+    </div>
+
+    <div class="regret hide">
+        <h2>Tiếc quá câu trả lời chính là Ai chan của chúng ta. </h2>
+        <h2>Tuy nhiên, Conan Movie 25 sẽ được công chiếu trên các rạp tại Việt Nam, đây hứa hẹn là một movie rất xuất xắc, hãy đón xem nha!!! Cảm ơn bạn đã tham gia minigame cùng mình</h2>
+    </div>
+
+
+    <script src="question.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
